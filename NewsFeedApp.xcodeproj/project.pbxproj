@@ -140,6 +140,7 @@
 		9430B7152614F76E00B051D3 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				94860DBB2618FC9F0075B8D7 /* DataLoader.swift */,
 				9430B7292615005400B051D3 /* NewsRequest.swift */,
 				9430B7162614F7A100B051D3 /* Constants.swift */,
 				9430B71E2614F81B00B051D3 /* Date=String.swift */,
@@ -178,7 +179,6 @@
 				9430B7152614F76E00B051D3 /* Utilities */,
 				9449A52326149ABE0018CDFB /* UI */,
 				9449A51926149A130018CDFB /* Supporting files */,
-				94860DBB2618FC9F0075B8D7 /* DataLoader.swift */,
 			);
 			path = NewsFeedApp;
 			sourceTree = "<group>";

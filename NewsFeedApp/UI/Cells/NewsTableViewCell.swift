@@ -16,7 +16,7 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var source: UILabel!
     @IBOutlet weak var NewsDescription: UILabel!
     @IBOutlet weak var datePublished: UILabel!
-    
+
     var viewModel: NewsViewModel?
     var NewsURL: String?
     
