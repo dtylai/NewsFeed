@@ -29,9 +29,14 @@ class NewsTableViewCell: UITableViewCell {
         source.text = news.sourceName
         NewsDescription.text = news.description
         
-//        if news.description.count > 120 {
+        let str = news.description.filter {$0 != " "}
+//        print(str.count)
+//        print(str)
+        if str.count > 100 {
         NewsDescription.addTrailing(with: "... ", moreText: "Show more", moreTextFont: readmoreFont!, moreTextColor: readmoreFontColor)
-//        }
+        }
+       
+        
         datePublished.text = news.date
         newsImageView.sd_setImage(with: URL(string: news.imageURL), placeholderImage: UIImage(named: "placeholder.png"))
         NewsURL = news.articleURL
