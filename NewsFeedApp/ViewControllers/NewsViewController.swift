@@ -19,7 +19,7 @@ class NewsViewController: UIViewController {
     fileprivate var paginationUIManager: PaginationUIManager?
     fileprivate var dataSource: [NewsViewModel] = []
     fileprivate var fetchedArticles: [NewsViewModel] = []
-    fileprivate var reloadedArticles: [NewsViewModel] = []
+//    fileprivate var reloadedArticles: [NewsViewModel] = []
     fileprivate var pageNumber = 1
     fileprivate var pagaSizee = 5
     fileprivate var componentsFromCuurentDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: Date())
@@ -40,7 +40,7 @@ class NewsViewController: UIViewController {
         fetchItems()
         change()
         fetchData()
-        reloadedArticles = dataSource
+//        reloadedArticles = dataSource
     }
     
     fileprivate func setupPagination() {
@@ -111,9 +111,14 @@ extension NewsViewController: UITableViewDataSource {
             as? NewsTableViewCell else {
             return UITableViewCell()
         }
-       
-        cell.setup(with: dataSource[indexPath.row])
+        if dataSource.count > 0 {
+         cell.setup(with: dataSource[indexPath.row])
         return cell
+        }
+        else{
+            return cell
+        }
+        
     }
     
 }
@@ -162,7 +167,7 @@ extension NewsViewController    : PaginationUIManagerDelegate {
         delay(3) {
             self.dataSource = []
             self.fetchedArticles = []
-            self.dataSource = self.reloadedArticles
+//            self.dataSource = self.reloadedArticles
             self.change()
             self.fetchData()
 
