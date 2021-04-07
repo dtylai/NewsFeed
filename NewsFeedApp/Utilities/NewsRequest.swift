@@ -57,7 +57,7 @@ struct NewsRequest {
         formatter.dateFormat = Constants.requestDateFormat
         formatter.timeZone = TimeZone(secondsFromGMT: 0)! as TimeZone
         var params = [RequestParameter: String]()
-        params[.domains]="lenta.ru"
+        params[.domains]="news.tut.by"
         params[.pageSize] = "\(pageSize)"
 //        params[.page] = "\(pageNumber)"
         params[.from] = formatter.string(from: timeFrom  as Date)
