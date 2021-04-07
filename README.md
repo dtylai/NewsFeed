@@ -42,7 +42,7 @@ Then clone the repository there with the following command:
 
 Basic settings can be changed in the file NewsRequest
 In stuct Constants(file Constants) you can enter your API key  cganging the value "apiKey"
-You can specify the number of uploaded news for one request by changing the value "pageSize(file NewsViewController)"
+You can specify the number of uploaded news for one request by changing the value "pageSize"(file NewsViewController)
 
 ## Running the tests
 
