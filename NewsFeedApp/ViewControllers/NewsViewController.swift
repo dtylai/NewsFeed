@@ -164,7 +164,7 @@ extension NewsViewController: UISearchBarDelegate {
 
 extension NewsViewController    : PaginationUIManagerDelegate {
     func refreshAll(completion: @escaping (Bool) -> Void) {
-        delay(3) {
+        delay(2) {
             self.dataSource = []
             self.fetchedArticles = []
 //            self.dataSource = self.reloadedArticles

@@ -8,7 +8,7 @@
 import UIKit
 
 struct Constants {
-    static let apiKey = "8e58842e74f2453bb5e6e3845b386a81"
+    static let apiKey = "1a1c707884f343f6a5d1b2653eecb8d9"
     //"17dee2eb8eee461584226aceece35139"
     // "b054d201bf7c4ba8976e3b2ec44686ce"
     //"a7d312d111564be8af66634a50ba3e24"
