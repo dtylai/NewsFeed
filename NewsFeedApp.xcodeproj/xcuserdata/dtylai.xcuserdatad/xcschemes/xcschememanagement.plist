@@ -7,7 +7,25 @@
 		<key>NewsFeedApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>9449A4E2261499DE0018CDFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9449A4F8261499E20018CDFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9449A503261499E20018CDFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
