@@ -19,6 +19,7 @@ class NewsViewController: UIViewController {
     fileprivate var paginationUIManager: PaginationUIManager?
     fileprivate var dataSource: [NewsViewModel] = []
     fileprivate var fetchedArticles: [NewsViewModel] = []
+    fileprivate var reloadedArticles: [NewsViewModel] = []
     fileprivate var pageNumber = 1
     fileprivate var pagaSizee = 5
     fileprivate var componentsFromCuurentDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: Date())
@@ -38,7 +39,8 @@ class NewsViewController: UIViewController {
         setupPagination()
         fetchItems()
         change()
-//        fetchData()
+        fetchData()
+        reloadedArticles = dataSource
     }
     
     fileprivate func setupPagination() {
@@ -73,29 +75,7 @@ class NewsViewController: UIViewController {
     }
     func fetchData(){
         
-        dataLoader.request(.everything( pageSize: pagaSizee, pageNumber: pageNumber,timeFrom: dateFrom, timeTo: dateTo)) { [weak self](response, _) in
-            guard let self = self,
-                let articles = response?.articles else {
-                    return
-            }
-            var viewModels = [NewsViewModel]()
-            for article in articles {
-                let viewModel = NewsViewModel(model: article)
-                viewModels.append(viewModel)
-            }
-            self.fetchedArticles.append(contentsOf: viewModels)
-            self.dataSource = self.fetchedArticles
-        
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-        
-    }
-    
-    func fetchDatarel(){
-        
-        dataLoader.request(.everything( pageSize: pagaSizee, pageNumber: pageNumber,timeFrom: dateFrom, timeTo: dateTo)) { [weak self](response, _) in
+        dataLoader.request(.everything( pageSize: pagaSizee, timeFrom: dateFrom, timeTo: dateTo)) { [weak self](response, _) in
             guard let self = self,
                 let articles = response?.articles else {
                     return
@@ -182,6 +162,7 @@ extension NewsViewController    : PaginationUIManagerDelegate {
         delay(3) {
             self.dataSource = []
             self.fetchedArticles = []
+            self.dataSource = self.reloadedArticles
             self.change()
             self.fetchData()
 

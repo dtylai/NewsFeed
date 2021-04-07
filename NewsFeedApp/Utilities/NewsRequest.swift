@@ -52,14 +52,14 @@ struct NewsRequest {
     }
     
     
-    static func everything( pageSize: Int, pageNumber: Int,timeFrom: Date, timeTo:Date) -> NewsRequest {
+    static func everything( pageSize: Int, timeFrom: Date, timeTo:Date) -> NewsRequest {
         let formatter = DateFormatter()
         formatter.dateFormat = Constants.requestDateFormat
         formatter.timeZone = TimeZone(secondsFromGMT: 0)! as TimeZone
         var params = [RequestParameter: String]()
         params[.domains]="lenta.ru"
         params[.pageSize] = "\(pageSize)"
-        params[.page] = "\(pageNumber)"
+//        params[.page] = "\(pageNumber)"
         params[.from] = formatter.string(from: timeFrom  as Date)
         params[.to] = formatter.string(from: timeTo  as Date)
         return NewsRequest(endpoint: .everything, params: params)

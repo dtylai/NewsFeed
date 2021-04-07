@@ -22,7 +22,6 @@ class NewsTableViewCell: UITableViewCell {
     
     func setup(with news: NewsViewModel) {
         NewsDescription.numberOfLines = 3
-        
         title.text = news.title
         source.text = news.sourceName
         NewsDescription.text = news.description
